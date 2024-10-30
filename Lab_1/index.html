@@ -1,6 +1,3 @@
-@model IEnumerable<Product>
-@using X.PagedList;
-@using X.PagedList.Mvc.Core;
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -11,34 +8,27 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-	<link href="CSS/style.css" rel="stylesheet" />
 </head>
 <body>
-    
-    @{
-        // Sắp xếp mô hình theo một giá trị ngẫu nhiên
-        var random = new Random();
-        var shuffledModel = Model.OrderBy(x => random.Next()).ToList();
-    }
+
     <!-- Carousel -->
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
-            @for (int i = 0; i < shuffledModel.Count && i < 5; i++) // Lặp qua số lượng sản phẩm mong muốn hoặc số lượng sản phẩm trong mô hình nếu nhỏ hơn 5
-            {
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="@i" class="@((i == 0) ? "active" : "")" aria-current="@((i == 0) ? "true" : "false")" aria-label="Slide @(i + 1)"></button>
-            }
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
-            @foreach (var product in shuffledModel.Take(5)) // Lấy năm sản phẩm đầu tiên (ngẫu nhiên) cho băng truyền
-            {
-                <div class="carousel-item @(product == shuffledModel.First() ? "active" : "")">
-                    <a asp-action="Details" asp-route-productId="@product.Id">
-                        <img src="@(product.ProductImages.FirstOrDefault()?.ImageUrl ?? "https://via.placeholder.com/500")" class="d-block w-100" alt="Image @product.Title">
-                    </a>
-                </div>
-            }
+            <div class="carousel-item active">
+                <img src="https://via.placeholder.com/500" class="d-block w-100" alt="Image 1">
+            </div>
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/500" class="d-block w-100" alt="Image 2">
+            </div>
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/500" class="d-block w-100" alt="Image 3">
+            </div>
         </div>
-
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
@@ -53,16 +43,15 @@
     <div id="title-Hot" class="text-center">
         <p class="test">Chào mừng tới Website TTP SELLS BOOKS</p>
     </div>
-	
-
+    
     <section id="intro-section" class="w3l-passion-mid-sec home-phny py-5">
         <div class="container py-md-5 py-3">
             <div class="container HomePageAbout">
                 <div class="row w3l-passion-mid-grids">
                     <div class="col-lg-6 passion-grid-item-info pe-lg-5 mb-lg-0 mb-5">
                         <h6 class="title-subw3hny mb-1">Welcome</h6>
-                        <h3 class="title-w3l mb-4">TTP Sells shoes &amp; xây dựng phát triển website</h3>
-                        <p class="mt-3 pe-lg-5">Chúng tôi ở đây để bán giày 2hands chất lượng và đem tới trải nghiệm cho người dùng. Dưới đây là các sản phẩm chúng tôi đang bày bán với các chương trình ưu đãi dành cho khách hàng.</p>
+                        <h3 class="title-w3l mb-4">TTP Sells shoes & xây dựng phát triển website</h3>
+                        <p class="mt-3 pe-lg-5">Chúng tôi ở đây để bán giày 2hands chất lượng và đem tới trải nghiệm cho người dùng.</p>
                     </div>
                     <div class="col-lg-6 w3hny-passion-item">
                         <div class="row">
@@ -79,180 +68,54 @@
         </div>
     </section>
 
-
     <div class="flash-sale-title">
         <h2><i class="bi bi-lightning"></i>Flash Sale</h2>
         <div id="flashSaleTimer"></div>
     </div>
 
     <div class="row pb-3">
-        @foreach (var product in Model.Where(p => p.IsFlashSale))
-        {
-            <div class="col-lg-3 col-sm-6 mb-4">
-                <div class="card border-0 p-3 shadow border-top border-5 rounded product-card  @(product.IsFlashSale ? "flash-sale-card" : "")">
-                    @if (product.ProductImages != null && product.ProductImages.Count() > 0)
-                    {
-                        <img src="@product.ProductImages.FirstOrDefault().ImageUrl" class="rounded product-image" />
-                    }
-                    else
-                    {
-                        <img src="https://placehold.co/500x600/png" class="rounded product-image" />
-                    }
-                    <div class="product-details">
-                        <div>
-                            <p class="card-title h5 text-dark opacity-75 text-uppercase text-center">@product.Title</p>
-                            <p class="card-title text-warning text-center">Size: <b>@product.Size</b></p>
-                        </div>
-                        <div>
-                            <p class="text-dark text-opacity-75 text-center mb-0">
-                                Bảng giá:
-                                <span class="text-decoration-line-through">
-                                    @product.ListPrice.ToString("c")
-                                </span>
-                            </p>
-                            <p class="text-dark text-opacity-75 text-center">
-                                Giá thấp nhất:
-                                <span>
-                                    @product.FlashSalePrice
-                                </span>
-                            </p>
-                        </div>
-                        <div class="btn-details">
-                            <a asp-action="Details"
-                               asp-route-productId="@product.Id"
-                               class="btn btn-primary bg-gradient border-0 form-control">
-                                Xem chi tiết
-                            </a>
-                        </div>
+        <div class="col-lg-3 col-sm-6 mb-4">
+            <div class="card border-0 p-3 shadow border-top border-5 rounded product-card flash-sale-card">
+                <img src="https://placehold.co/500x600/png" class="rounded product-image" />
+                <div class="product-details">
+                    <div>
+                        <p class="card-title h5 text-dark opacity-75 text-uppercase text-center">Product Title</p>
+                        <p class="card-title text-warning text-center">Size: <b>42</b></p>
+                    </div>
+                    <div>
+                        <p class="text-dark text-opacity-75 text-center mb-0">Bảng giá: <span class="text-decoration-line-through">1,000,000₫</span></p>
+                        <p class="text-dark text-opacity-75 text-center">Giá thấp nhất: <span>800,000₫</span></p>
+                    </div>
+                    <div class="btn-details">
+                        <a href="#" class="btn btn-primary bg-gradient border-0 form-control">Xem chi tiết</a>
                     </div>
                 </div>
             </div>
-        }
+        </div>
     </div>
-
 
     <div class="container mt-4">
         <div class="row mb-3">
             <div class="col-12 filter-container">
-                <a href="?sortOrder=Price&searchString=@ViewBag.CurrentFilter&category=@ViewBag.CurrentCategory" class="btn filter-btn btn-low-price">
-                    <i class="fas fa-sort-amount-down-alt filter-icon"></i> Giá từ thấp đến cao
-                </a>
-                <a href="?sortOrder=price_desc&searchString=@ViewBag.CurrentFilter&category=@ViewBag.CurrentCategory" class="btn filter-btn btn-high-price">
-                    <i class="fas fa-sort-amount-up-alt filter-icon"></i> Giá từ cao đến thấp
-                </a>
+                <button class="btn filter-btn btn-low-price"><i class="fas fa-sort-amount-down-alt filter-icon"></i> Giá từ thấp đến cao</button>
+                <button class="btn filter-btn btn-high-price"><i class="fas fa-sort-amount-up-alt filter-icon"></i> Giá từ cao đến thấp</button>
             </div>
         </div>
-        <form method="post" action="">
-            <div class="row mb-3">
-                <div class="col-md-3">
-                    <label for="minPrice" class="form-label">Giá tối thiểu</label>
-                    <input type="number" min="1" class="form-control" id="minPrice" name="minPrice" value="@ViewBag.MinPrice" />
-                </div>
-                <div class="col-md-3">
-                    <label for="maxPrice" class="form-label">Giá tối đa</label>
-                    <input type="number" min="1" class="form-control" id="maxPrice" name="maxPrice" value="@ViewBag.MaxPrice" />
-                </div>
-                <div class="col-md-3 align-self-end">
-                    <button type="submit" class="btn btn-primary">Lọc</button>
-                </div>
-            </div>
-        </form>
-        <form method="get" action="">
-            <div class="row mb-3">
-                <div class="col-md-3">
-                    <label for="size" class="form-label">Size</label>
-                    <select id="size" name="size" class="form-select">
-                        <option value="">Tất cả</option>
-                        <option value="38">38</option>
-                        <option value="39">39</option>
-                        <option value="40">40</option>
-                        <option value="41">41</option>
-                        <option value="42">42</option>
-                        <option value="43">43</option>
-                    </select>
-                </div>
-                <div class="col-md-3 align-self-end">
-                    <button type="submit" class="btn btn-primary">Lọc</button>
-                </div>
-            </div>
-        </form>
-
-        <div class="row pb-3">
-            @foreach (var product in Model.Where(p => !p.IsFlashSale))
-            {
-                <div class="col-lg-3 col-sm-6 mb-4">
-                    <div class="card border-0 p-3 shadow border-top border-5 rounded product-card">
-                        @if (product.ProductImages != null && product.ProductImages.Count() > 0)
-                        {
-                            <img src="@product.ProductImages.FirstOrDefault().ImageUrl" class="rounded product-image" />
-                        }
-                        else
-                        {
-                            <img src="https://placehold.co/500x600/png" class="rounded product-image" />
-                        }
-                        <div class="product-details">
-                            <div>
-                                <p class="card-title h5 text-dark opacity-75 text-uppercase text-center">@product.Title</p>
-                                <p class="card-title text-warning text-center">Size: <b>@product.Size</b></p>
-                            </div>
-                            <div>
-                                <p class="text-dark text-opacity-75 text-center mb-0">
-                                    Bảng giá:
-                                    <span class="text-decoration-line-through">
-                                        @product.ListPrice.ToString("c")
-                                    </span>
-                                </p>
-                                <p class="text-dark text-opacity-75 text-center">
-                                    Giá thấp nhất:
-                                    <span>
-                                        @product.Price100.ToString("c")
-                                    </span>
-                                </p>
-                            </div>
-                            <div class="btn-details">
-                                <a asp-action="Details"
-                                   asp-route-productId="@product.Id"
-                                   class="btn btn-primary bg-gradient border-0 form-control">
-                                    Xem chi tiết
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            }
-        </div>
+        <!-- Add additional static product cards as needed -->
     </div>
-    
-    @Html.PagedListPager((IPagedList<Product>)Model, page => Url.Action("Index", new
-        {
-            page,
-            sortOrder = ViewBag.CurrentSort,
-            searchString = ViewBag.CurrentFilter,
-            category = ViewBag.CurrentCategory,
-            minPrice = ViewBag.MinPrice,
-            maxPrice = ViewBag.MaxPric,
-            size = ViewBag.size
 
-        }),
-            new PagedListRenderOptions
-    {
-        LiElementClasses = new[] { "page-item" },
-        PageClasses = new[] { "page-link" },
-        UlElementClasses = new[] { "pagination" }
-    })
+    <!-- Testimonials Section -->
     <div class="testimonials-container">
         <div class="title-section">
             <button class="testimonials-button">Testimonials</button>
             <h1>Các khách hàng đã nói gì?</h1>
-            <p>
-                Đọc những gì khách hàng hài lòng nói về sản phẩm/dịch vụ của chúng tôi. Chúng tôi tự hào cung cấp dịch vụ khách hàng đặc biệt và đánh giá cao phản hồi của họ.Chúng tôi luôn đánh giá cao mọi phản hồi để có thể cải thiện hơn trong tương lai. Cảm ơn quý khách đã tin tưởng và ủng hộ chúng tôi!
-            </p>
+            <p>Đọc những gì khách hàng hài lòng nói về sản phẩm/dịch vụ của chúng tôi.</p>
         </div>
         <div class="testimonials-section">
             <div class="testimonials-wrapper">
                 <div class="testimonial">
                     <div class="testimonial-content">
-                        <p>"Tôi đã mua một số sách từ trang web của TTP và rất hài lòng với trải nghiệm mua hàng của mình. Giao hàng nhanh chóng và sách đến trong tình trạng tốt nhất."</p>
+                        <p>"Tôi đã mua một số sách từ trang web của TTP và rất hài lòng với trải nghiệm mua hàng của mình."</p>
                         <div class="customer-info">
                             <img src="~/images/avatarpeople/anh4.jpg" alt="Hà Huy Chiến Thắng">
                             <div>
@@ -262,130 +125,21 @@
                         </div>
                     </div>
                 </div>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <p>"Sản phẩm trên trang web của TTP đa dạng và phong phú. Tôi luôn tìm thấy những cuốn sách mới và thú vị để đọc mỗi khi ghé thăm."</p>
-                        <div class="customer-info">
-                            <img src="~/images/avatarpeople/anh2.jpg" alt="Nguyễn Văn Anh">
-                            <div>
-                                <strong>Nguyễn Văn Anh</strong>
-                                <span>Nhà phát triển Ứng dụng Di động, Apple</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <p>"Đội ngũ nhân viên của TTP rất chuyên nghiệp và nhiệt tình. Họ luôn sẵn lòng giúp đỡ và tư vấn cho tôi về các cuốn sách phù hợp với sở thích của mình."</p>
-                        <div class="customer-info">
-                            <img src="~/images/avatarpeople/anh3.jpg" alt="Trần Thị Hương">
-                            <div>
-                                <strong>Trần Thị Hương</strong>
-                                <span>Giám đốc Tiếp thị, Facebook</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <p>
-                            "Dịch vụ khách hàng của TTP thực sự ấn tượng. Tôi đã gặp một vấn đề nhỏ khi đặt hàng và họ đã giải quyết nhanh chóng và hiệu quả."
-                        </p>
-                        <div class="customer-info">
-                            <img src="~/images/avatarpeople/anh1.jpg" alt="Lê Đình Hải">
-                            <div>
-                                <strong>Lê Đình Hải </strong>
-                                <span>Trưởng Nhóm Kinh doanh, Amazone</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <p>"Tôi thích cách TTP tổ chức trang web của họ. Rất dễ dàng để tìm kiếm và đặt hàng, không gặp bất kỳ vấn đề nào."</p>
-                        <div class="customer-info">
-                            <img src="~/images/avatarpeople/anh5.jpg" alt="Phạm Thị Mai">
-                            <div>
-                                <strong>Phạm Thị Mai </strong>
-                                <span>Quản lý Sản phẩm, Google</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <p>"Sách của TTP luôn có chất lượng cao và giá cả phải chăng. Tôi đã mua nhiều lần và không hề thất vọng."</p>
-                        <div class="customer-info">
-                            <img src="~/images/avatarpeople/anh6.jpg" alt="Nguyễn Minh Tuấn">
-                            <div>
-                                <strong>Nguyễn Minh Tuấn </strong>
-                                <span>Giám đốc Phát triển Sản phẩm, Microsoft</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Add more testimonials as needed -->
             </div>
         </div>
     </div>
+
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".product-card").hover(
+                function () { $(this).addClass('hovered'); },
+                function () { $(this).removeClass('hovered'); }
+            );
+        });
+    </script>
 </body>
 </html>
-
-<script>
-    $(document).ready(function () {
-        // Sử dụng the carousel
-        $('#carouselExampleSlidesOnly').carousel();
-
-        // Auto slide
-        $('#carouselExampleSlidesOnly').carousel({
-            interval: 700 // Thời gian chờ giữa các lần chuyển đổi, tính bằng mili giây
-        });
-    });
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const testimonialsWrapper = document.querySelector('.testimonials-wrapper');
-        const testimonials = document.querySelectorAll('.testimonial');
-        const testimonialHeight = testimonials[0].offsetHeight + 20; // height including margin
-        let scrollAmount = 0;
-        const wrapperHeight = testimonialsWrapper.scrollHeight;
-
-        // Duplicate testimonials for continuous scrolling
-        testimonials.forEach(testimonial => {
-            const clone = testimonial.cloneNode(true);
-            testimonialsWrapper.appendChild(clone);
-        });
-
-        function scrollTestimonials() {
-            scrollAmount += 0.5; // Adjust this value to control the scrolling speed
-            if (scrollAmount >= wrapperHeight / 2) {
-                scrollAmount = 0;
-            }
-            testimonialsWrapper.style.transform = `translateY(-${wrapperHeight / 2 - scrollAmount}px)`;
-            requestAnimationFrame(scrollTestimonials);
-        }
-
-        requestAnimationFrame(scrollTestimonials);
-    });
-</script>
-<!-- jQuery -->
-<script>
-    $(document).ready(function () {
-        $(".product-card").hover(
-            function () {
-                $(this).addClass('hovered'); // Thêm lớp khi hover
-            },
-            function () {
-                $(this).removeClass('hovered'); // Xóa lớp khi hover ra
-            }
-        );
-    });
-</script>
-
-
-
-
