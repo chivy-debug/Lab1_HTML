@@ -4,45 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang Chủ</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="CSS/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="https://png.pngtree.com/png-clipart/20201208/original/pngtree-sneaker-logo-design-png-image_5582180.jpg" class="logo">
+                <img src="https://png.pngtree.com/png-clipart/20201208/original/pngtree-sneaker-logo-design-png-image_5582180.jpg" alt="Logo" class="logo-image"> <!-- Đường dẫn logo -->
+            </a>
+        </div>
+        <ul class="navbar-menu">
+            <li><a href="#">Trang Chủ</a></li>
+            <li><a href="#">Sản Phẩm</a></li>
+            <li><a href="#">Giảm Giá</a></li>
+            <li><a href="#">Liên Hệ</a></li>
+            <li><a href="#">Giỏ Hàng</a></li>
+        </ul>
+    </nav>
     <!-- Carousel -->
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://via.placeholder.com/500" class="d-block w-100" alt="Image 1">
-            </div>
-            <div class="carousel-item">
-                <img src="https://via.placeholder.com/500" class="d-block w-100" alt="Image 2">
-            </div>
-            <div class="carousel-item">
-                <img src="https://via.placeholder.com/500" class="d-block w-100" alt="Image 3">
+                <img src="https://bizweb.dktcdn.net/100/448/660/products/image1705405435159.png?v=1712716613393" class="d-block w-100" alt="Image 1">
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
 
     <!-- Tiêu đề phía dưới carousel -->
     <div id="title-Hot" class="text-center">
-        <p class="test">Chào mừng tới Website TTP SELLS BOOKS</p>
+        <p class="test">Chào mừng tới Website Bán Giày</p>
     </div>
     
     <section id="intro-section" class="w3l-passion-mid-sec home-phny py-5">
@@ -51,74 +44,238 @@
                 <div class="row w3l-passion-mid-grids">
                     <div class="col-lg-6 passion-grid-item-info pe-lg-5 mb-lg-0 mb-5">
                         <h6 class="title-subw3hny mb-1">Welcome</h6>
-                        <h3 class="title-w3l mb-4">TTP Sells shoes & xây dựng phát triển website</h3>
-                        <p class="mt-3 pe-lg-5">Chúng tôi ở đây để bán giày 2hands chất lượng và đem tới trải nghiệm cho người dùng.</p>
+                        <h3 class="title-w3l mb-4">VKAT Sells shoes &amp; xây dựng phát triển website</h3>
+                        <p class="mt-3 pe-lg-5">Chúng tôi ở đây để bán giày 2hands chất lượng và đem tới trải nghiệm cho người dùng. Dưới đây là các sản phẩm chúng tôi đang bày bán với các chương trình ưu đãi dành cho khách hàng.</p>
                     </div>
-                    <div class="col-lg-6 w3hny-passion-item">
-                        <div class="row">
-                            <div class="col-6 passion-grid-item-pic">
-                                <img src="~/images/imagesdesign/anh2-removebg-preview.png" alt="" class="img-fluid radius-image">
-                            </div>
-                            <div class="col-6 passion-grid-item-pic">
-                                <img src="~/images/imagesdesign/d1a80c65ca052b8ef599d7d459b68948-removebg-preview.png" alt="" class="img-fluid radius-image">
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
     </section>
+    
+    
 
     <div class="flash-sale-title">
         <h2><i class="bi bi-lightning"></i>Flash Sale</h2>
         <div id="flashSaleTimer"></div>
     </div>
 
-    <div class="row pb-3">
-        <div class="col-lg-3 col-sm-6 mb-4">
-            <div class="card border-0 p-3 shadow border-top border-5 rounded product-card flash-sale-card">
-                <img src="https://placehold.co/500x600/png" class="rounded product-image" />
-                <div class="product-details">
-                    <div>
-                        <p class="card-title h5 text-dark opacity-75 text-uppercase text-center">Product Title</p>
-                        <p class="card-title text-warning text-center">Size: <b>42</b></p>
-                    </div>
-                    <div>
-                        <p class="text-dark text-opacity-75 text-center mb-0">Bảng giá: <span class="text-decoration-line-through">1,000,000₫</span></p>
-                        <p class="text-dark text-opacity-75 text-center">Giá thấp nhất: <span>800,000₫</span></p>
-                    </div>
-                    <div class="btn-details">
-                        <a href="#" class="btn btn-primary bg-gradient border-0 form-control">Xem chi tiết</a>
-                    </div>
-                </div>
+    <div class="container">
+        <h1 class="title">Danh Sách Sản Phẩm Flash Sale</h1>
+        <div class="product-grid">
+            <!-- Hàng 1 -->
+            <div class="product-card">
+                <div class="flash-sale-tag">Flash Sale</div>
+                <img src="https://bizweb.dktcdn.net/100/448/660/products/image1705405435159.png?v=1712716613393" alt="Giày Flash Sale 1" class="product-image">
+                <h2 class="product-title">Giày Flash Sale 1</h2>
+                <p class="product-size">Size: <b>38</b></p>
+                <p class="product-price">Bảng giá: <span class="old-price">600,000 đ</span></p>
+                <p class="product-discount">Giá thấp nhất: 400,000 đ</p>
+                <a href="#" class="btn">Xem chi tiết</a>
+            </div>
+            <div class="product-card">
+                <div class="flash-sale-tag">Flash Sale</div>
+                <img src="https://kingshoes.vn/data/upload/media/SNEAKER-315122-111-AIR-FORCE-1-07-NIKE-KINGSHOES.VN-TPHCM-TANBINH-14.jpg" alt="Giày Flash Sale 2" class="product-image">
+                <h2 class="product-title">Giày Flash Sale 2</h2>
+                <p class="product-size">Size: <b>39</b></p>
+                <p class="product-price">Bảng giá: <span class="old-price">600,000 đ</span></p>
+                <p class="product-discount">Giá thấp nhất: 400,000 đ</p>
+                <a href="#" class="btn">Xem chi tiết</a>
+            </div>
+            <div class="product-card">
+                <div class="flash-sale-tag">Flash Sale</div>
+                <img src="https://kingshoes.vn/data/upload/media/gia%CC%80y-nike-air-max-95-nam-av7939-400-king-shoes-sneaker-real-hcm-26.jpeg" alt="Giày Flash Sale 3" class="product-image">
+                <h2 class="product-title">Giày Flash Sale 3</h2>
+                <p class="product-size">Size: <b>40</b></p>
+                <p class="product-price">Bảng giá: <span class="old-price">600,000 đ</span></p>
+                <p class="product-discount">Giá thấp nhất: 400,000 đ</p>
+                <a href="#" class="btn">Xem chi tiết</a>
+            </div>
+            <div class="product-card">
+                <div class="flash-sale-tag">Flash Sale</div>
+                <img src="https://kingshoes.vn/data/upload/media/dz0795-100-giay-nike-air-max-excee-chinh-hang-gia-tot-den-king-shoes-1.jpg" alt="Giày Flash Sale 4" class="product-image">
+                <h2 class="product-title">Giày Flash Sale 4</h2>
+                <p class="product-size">Size: <b>41</b></p>
+                <p class="product-price">Bảng giá: <span class="old-price">600,000 đ</span></p>
+                <p class="product-discount">Giá thấp nhất: 400,000 đ</p>
+                <a href="#" class="btn">Xem chi tiết</a>
+            </div>
+            <div class="product-card">
+                <div class="flash-sale-tag">Flash Sale</div>
+                <img src="https://kingshoes.vn/data/upload/media/nike-air-max-2017-849559-008-nam-chinh-hang-tphcm-king-shoes-sneaker-real-shop-tan-binh-9.jpg" alt="Giày Flash Sale 5" class="product-image">
+                <h2 class="product-title">Giày Flash Sale 5</h2>
+                <p class="product-size">Size: <b>42</b></p>
+                <p class="product-price">Bảng giá: <span class="old-price">600,000 đ</span></p>
+                <p class="product-discount">Giá thấp nhất: 400,000 đ</p>
+                <a href="#" class="btn">Xem chi tiết</a>
+            </div>
+            
+            <!-- Hàng 2 -->
+            <div class="product-card">
+                <div class="flash-sale-tag">Flash Sale</div>
+                <img src="https://kingshoes.vn/data/upload/media/dz0795-100-giay-nike-air-max-excee-chinh-hang-gia-tot-den-king-shoes-1.jpg" alt="Giày Flash Sale 6" class="product-image">
+                <h2 class="product-title">Giày Flash Sale 6</h2>
+                <p class="product-size">Size: <b>38</b></p>
+                <p class="product-price">Bảng giá: <span class="old-price">600,000 đ</span></p>
+                <p class="product-discount">Giá thấp nhất: 400,000 đ</p>
+                <a href="#" class="btn">Xem chi tiết</a>
+            </div>
+            <div class="product-card">
+                <div class="flash-sale-tag">Flash Sale</div>
+                <img src="https://kingshoes.vn/data/upload/media/gia%CC%80y-nike-air-max-95-nam-av7939-400-king-shoes-sneaker-real-hcm-26.jpeg" alt="Giày Flash Sale 7" class="product-image">
+                <h2 class="product-title">Giày Flash Sale 7</h2>
+                <p class="product-size">Size: <b>39</b></p>
+                <p class="product-price">Bảng giá: <span class="old-price">600,000 đ</span></p>
+                <p class="product-discount">Giá thấp nhất: 400,000 đ</p>
+                <a href="#" class="btn">Xem chi tiết</a>
+            </div>
+            <div class="product-card">
+                <div class="flash-sale-tag">Flash Sale</div>
+                <img src="https://kingshoes.vn/data/upload/media/fd0374-410-giay-nike-air-max-90-se-chinh-hang-gia-tot-den-king-shoes-1.jpeg" alt="Giày Flash Sale 8" class="product-image">
+                <h2 class="product-title">Giày Flash Sale 8</h2>
+                <p class="product-size">Size: <b>40</b></p>
+                <p class="product-price">Bảng giá: <span class="old-price">600,000 đ</span></p>
+                <p class="product-discount">Giá thấp nhất: 400,000 đ</p>
+                <a href="#" class="btn">Xem chi tiết</a>
             </div>
         </div>
     </div>
+    
+    <style>
+        .flash-sale-tag {
+            position: absolute;
+            background-color: red; /* Màu nền cho dấu hiệu */
+            color: white; /* Màu chữ */
+            padding: 5px 10px; /* Khoảng cách bên trong */
+            font-weight: bold; /* Chữ đậm */
+            top: 10px; /* Khoảng cách từ đỉnh */
+            left: 10px; /* Khoảng cách từ bên trái */
+            border-radius: 5px; /* Bo góc */
+            z-index: 10; /* Đưa lên trên cùng */
+        }
+        .product-card {
+            position: relative; /* Để dấu hiệu hiển thị trên sản phẩm */
+            overflow: hidden; /* Để dấu hiệu không tràn ra ngoài */
+        }
+    </style>
+    
 
     <div class="container mt-4">
         <div class="row mb-3">
             <div class="col-12 filter-container">
-                <button class="btn filter-btn btn-low-price"><i class="fas fa-sort-amount-down-alt filter-icon"></i> Giá từ thấp đến cao</button>
-                <button class="btn filter-btn btn-high-price"><i class="fas fa-sort-amount-up-alt filter-icon"></i> Giá từ cao đến thấp</button>
+                <a href="#" class="btn filter-btn btn-low-price">
+                    <i class="fas fa-sort-amount-down-alt filter-icon"></i> Giá từ thấp đến cao
+                </a>
+                <a href="#" class="btn filter-btn btn-high-price">
+                    <i class="fas fa-sort-amount-up-alt filter-icon"></i> Giá từ cao đến thấp
+                </a>
             </div>
         </div>
-        <!-- Add additional static product cards as needed -->
-    </div>
+            <form method="post" action="">
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <label for="minPrice" class="form-label">Giá tối thiểu</label>
+                        <input type="number" min="1" class="form-control" id="minPrice" name="minPrice" value="" />
+                    </div>
+                    <div class="col-md-3">
+                        <label for="maxPrice" class="form-label">Giá tối đa</label>
+                        <input type="number" min="1" class="form-control" id="maxPrice" name="maxPrice" value="" />
+                    </div>
+                    <div class="col-md-3 align-self-end">
+                        <button type="submit" class="btn btn-primary">Lọc</button>
+                    </div>
+                </div>
+            </form>
 
-    <!-- Testimonials Section -->
+        <div class="container">
+            <h1 class="title">Danh Sách Sản Phẩm</h1>
+            <div class="product-grid">
+                <!-- Hàng 1 -->
+                <div class="product-card">
+                    <img src="https://bizweb.dktcdn.net/100/448/660/products/image1705405435159.png?v=1712716613393" alt="Giày Thường 1" class="product-image">
+                    <h2 class="product-title">Giày Thường 1</h2>
+                    <p class="product-size">Size: <b>38</b></p>
+                    <p class="product-price">Bảng giá: <span class="old-price">600,000 đ</span></p>
+                    <p class="product-discount">Giá thấp nhất: 400,000 đ</p>
+                    <a href="#" class="btn">Xem chi tiết</a>
+                </div>
+                <div class="product-card">
+                    <img src="https://kingshoes.vn/data/upload/media/SNEAKER-315122-111-AIR-FORCE-1-07-NIKE-KINGSHOES.VN-TPHCM-TANBINH-14.jpg" alt="Giày Thường 2" class="product-image">
+                    <h2 class="product-title">Giày Thường 2</h2>
+                    <p class="product-size">Size: <b>39</b></p>
+                    <p class="product-price">Bảng giá: <span class="old-price">600,000 đ</span></p>
+                    <p class="product-discount">Giá thấp nhất: 400,000 đ</p>
+                    <a href="#" class="btn">Xem chi tiết</a>
+                </div>
+                <div class="product-card">
+                    <img src="https://kingshoes.vn/data/upload/media/gia%CC%80y-nike-air-max-95-nam-av7939-400-king-shoes-sneaker-real-hcm-26.jpeg" alt="Giày Thường 3" class="product-image">
+                    <h2 class="product-title">Giày Thường 3</h2>
+                    <p class="product-size">Size: <b>40</b></p>
+                    <p class="product-price">Bảng giá: <span class="old-price">600,000 đ</span></p>
+                    <p class="product-discount">Giá thấp nhất: 400,000 đ</p>
+                    <a href="#" class="btn">Xem chi tiết</a>
+                </div>
+                <div class="product-card">
+                    <img src="https://kingshoes.vn/data/upload/media/dz0795-100-giay-nike-air-max-excee-chinh-hang-gia-tot-den-king-shoes-1.jpg" alt="Giày Thường 4" class="product-image">
+                    <h2 class="product-title">Giày Thường 4</h2>
+                    <p class="product-size">Size: <b>41</b></p>
+                    <p class="product-price">Bảng giá: <span class="old-price">600,000 đ</span></p>
+                    <p class="product-discount">Giá thấp nhất: 400,000 đ</p>
+                    <a href="#" class="btn">Xem chi tiết</a>
+                </div>
+                <div class="product-card">
+                    <img src="https://kingshoes.vn/data/upload/media/nike-air-max-2017-849559-008-nam-chinh-hang-tphcm-king-shoes-sneaker-real-shop-tan-binh-9.jpg" alt="Giày Thường 5" class="product-image">
+                    <h2 class="product-title">Giày Thường 5</h2>
+                    <p class="product-size">Size: <b>42</b></p>
+                    <p class="product-price">Bảng giá: <span class="old-price">600,000 đ</span></p>
+                    <p class="product-discount">Giá thấp nhất: 400,000 đ</p>
+                    <a href="#" class="btn">Xem chi tiết</a>
+                </div>
+    
+                <!-- Hàng 2 -->
+                <div class="product-card">
+                    <img src="https://kingshoes.vn/data/upload/media/dz0795-100-giay-nike-air-max-excee-chinh-hang-gia-tot-den-king-shoes-1.jpg" alt="Giày Thường 6" class="product-image">
+                    <h2 class="product-title">Giày Thường 6</h2>
+                    <p class="product-size">Size: <b>38</b></p>
+                    <p class="product-price">Bảng giá: <span class="old-price">600,000 đ</span></p>
+                    <p class="product-discount">Giá thấp nhất: 400,000 đ</p>
+                    <a href="#" class="btn">Xem chi tiết</a>
+                </div>
+                <div class="product-card">
+                    <img src="https://kingshoes.vn/data/upload/media/gia%CC%80y-nike-air-max-95-nam-av7939-400-king-shoes-sneaker-real-hcm-26.jpeg" alt="Giày Thường 7" class="product-image">
+                    <h2 class="product-title">Giày Thường 7</h2>
+                    <p class="product-size">Size: <b>39</b></p>
+                    <p class="product-price">Bảng giá: <span class="old-price">600,000 đ</span></p>
+                    <p class="product-discount">Giá thấp nhất: 400,000 đ</p>
+                    <a href="#" class="btn">Xem chi tiết</a>
+                </div>
+                <div class="product-card">
+                    <img src="https://kingshoes.vn/data/upload/media/fd0374-410-giay-nike-air-max-90-se-chinh-hang-gia-tot-den-king-shoes-1.jpeg" alt="Giày Thường 8" class="product-image">
+                    <h2 class="product-title">Giày Thường 8</h2>
+                    <p class="product-size">Size: <b>40</b></p>
+                    <p class="product-price">Bảng giá: <span class="old-price">600,000 đ</span></p>
+                    <p class="product-discount">Giá thấp nhất: 400,000 đ</p>
+                    <a href="#" class="btn">Xem chi tiết</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
     <div class="testimonials-container">
         <div class="title-section">
             <button class="testimonials-button">Testimonials</button>
             <h1>Các khách hàng đã nói gì?</h1>
-            <p>Đọc những gì khách hàng hài lòng nói về sản phẩm/dịch vụ của chúng tôi.</p>
+            <p>
+                Đọc những gì khách hàng hài lòng nói về sản phẩm/dịch vụ của chúng tôi. Chúng tôi tự hào cung cấp dịch vụ khách hàng đặc biệt và đánh giá cao phản hồi của họ.Chúng tôi luôn đánh giá cao mọi phản hồi để có thể cải thiện hơn trong tương lai. Cảm ơn quý khách đã tin tưởng và ủng hộ chúng tôi!
+            </p>
         </div>
         <div class="testimonials-section">
             <div class="testimonials-wrapper">
                 <div class="testimonial">
                     <div class="testimonial-content">
-                        <p>"Tôi đã mua một số sách từ trang web của TTP và rất hài lòng với trải nghiệm mua hàng của mình."</p>
+                        <p>"Tôi đã mua một số sách từ trang web của TTP và rất hài lòng với trải nghiệm mua hàng của mình. Giao hàng nhanh chóng và sách đến trong tình trạng tốt nhất."</p>
                         <div class="customer-info">
-                            <img src="~/images/avatarpeople/anh4.jpg" alt="Hà Huy Chiến Thắng">
+                            <img src="https://i.vietgiaitri.com/2022/9/22/hinh-anh-nguoi-dep-10x-vao-vai-tieu-long-nu-trong-than-dieu-dai-hiep-92d-6652978.jpg" alt="Hà Huy Chiến Thắng">
                             <div>
                                 <strong>Hà Huy Chiến Thắng</strong>
                                 <span>Quản lý Sản phẩm và SEO của Samsung</span>
@@ -126,21 +283,239 @@
                         </div>
                     </div>
                 </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Sản phẩm trên trang web của TTP đa dạng và phong phú. Tôi luôn tìm thấy những cuốn sách mới và thú vị để đọc mỗi khi ghé thăm."</p>
+                        <div class="customer-info">
+                            <img src="https://img.tripi.vn/cdn-cgi/image/width=700,height=700/https://gcs.tripi.vn/public-tripi/tripi-feed/img/474053FoG/hinh-nguoi-that-de-thuong_043419682.jpg" alt="Nguyễn Văn Anh">
+                            <div>
+                                <strong>Nguyễn Văn Anh</strong>
+                                <span>Nhà phát triển Ứng dụng Di động, Apple</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Đội ngũ nhân viên của TTP rất chuyên nghiệp và nhiệt tình. Họ luôn sẵn lòng giúp đỡ và tư vấn cho tôi về các cuốn sách phù hợp với sở thích của mình."</p>
+                        <div class="customer-info">
+                            <img src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2020/11/20/856165/Img2904-159927756318.jpg" alt="Trần Thị Hương">
+                            <div>
+                                <strong>Trần Thị Hương</strong>
+                                <span>Giám đốc Tiếp thị, Facebook</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>
+                            "Dịch vụ khách hàng của TTP thực sự ấn tượng. Tôi đã gặp một vấn đề nhỏ khi đặt hàng và họ đã giải quyết nhanh chóng và hiệu quả."
+                        </p>
+                        <div class="customer-info">
+                            <img src="https://phunuvietnam.mediacdn.vn/179072216278405120/2023/2/2/z407811279454704d3b10be2c47b86e5bd170832bde562-16753562253021567389777.jpg" alt="Lê Đình Hải">
+                            <div>
+                                <strong>Lê Đình Hải </strong>
+                                <span>Trưởng Nhóm Kinh doanh, Amazone</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Tôi thích cách TTP tổ chức trang web của họ. Rất dễ dàng để tìm kiếm và đặt hàng, không gặp bất kỳ vấn đề nào."</p>
+                        <div class="customer-info">
+                            <img src="https://gcs.tripi.vn/public-tripi/tripi-feed/img/474053MSU/anh-cute-nguoi-that-dep-nhat_022606213.jpg" alt="Phạm Thị Mai">
+                            <div>
+                                <strong>Phạm Thị Mai </strong>
+                                <span>Quản lý Sản phẩm, Google</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Sách của TTP luôn có chất lượng cao và giá cả phải chăng. Tôi đã mua nhiều lần và không hề thất vọng."</p>
+                        <div class="customer-info">
+                            <img src="https://gcs.tripi.vn/public-tripi/tripi-feed/img/474053MSU/anh-cute-nguoi-that-dep-nhat_022606213.jpg" alt="Nguyễn Minh Tuấn">
+                            <div>
+                                <strong>Nguyễn Minh Tuấn </strong>
+                                <span>Giám đốc Phát triển Sản phẩm, Microsoft</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more testimonials as needed -->
             </div>
         </div>
     </div>
-
-    <!-- Bootstrap Bundle with Popper -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $(".product-card").hover(
-                function () { $(this).addClass('hovered'); },
-                function () { $(this).removeClass('hovered'); }
-            );
-        });
-    </script>
+    <footer class="footer" style="margin: -8px;">
+        <div class="footer-content">
+            <p>&copy; 2024 ShopLogo. Bản quyền thuộc về chúng tôi.</p>
+            <ul class="footer-menu">
+                <li><a href="#">Điều Khoản Sử Dụng</a></li>
+                <li><a href="#">Chính Sách Bảo Mật</a></li>
+                <li><a href="#">Liên Hệ</a></li>
+            </ul>
+        </div>
+    </footer>
+    
 </body>
 </html>
+
+
+<script>
+    $(document).ready(function () {
+        // Sử dụng the carousel
+        $('#carouselExampleSlidesOnly').carousel();
+
+        // Auto slide
+        $('#carouselExampleSlidesOnly').carousel({
+            interval: 700 
+        });
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const testimonialsWrapper = document.querySelector('.testimonials-wrapper');
+        const testimonials = document.querySelectorAll('.testimonial');
+        const testimonialHeight = testimonials[0].offsetHeight + 20; // height including margin
+        let scrollAmount = 0;
+        const wrapperHeight = testimonialsWrapper.scrollHeight;
+
+        // Duplicate testimonials for continuous scrolling
+        testimonials.forEach(testimonial => {
+            const clone = testimonial.cloneNode(true);
+            testimonialsWrapper.appendChild(clone);
+        });
+
+        function scrollTestimonials() {
+            scrollAmount += 0.5; // Adjust this value to control the scrolling speed
+            if (scrollAmount >= wrapperHeight / 2) {
+                scrollAmount = 0;
+            }
+            testimonialsWrapper.style.transform = `translateY(-${wrapperHeight / 2 - scrollAmount}px)`;
+            requestAnimationFrame(scrollTestimonials);
+        }
+
+        requestAnimationFrame(scrollTestimonials);
+    });
+</script>
+<!-- jQuery -->
+<script>
+    $(document).ready(function () {
+        $(".product-card").hover(
+            function () {
+                $(this).addClass('hovered'); // Thêm lớp khi hover
+            },
+            function () {
+                $(this).removeClass('hovered'); // Xóa lớp khi hover ra
+            }
+        );
+    });
+</script>
+<script>
+    var x;
+
+    // Tính toán thời gian kết thúc là 24 giờ từ bây giờ
+    var now = new Date().getTime();
+    var endTime = now + (24 * 60 * 60 * 1000); // 24 giờ tính bằng mili giây
+
+    // JavaScript để tính toán thời gian còn lại cho Flash Sale
+    function updateFlashSaleTimer(endTime) {
+        var now = new Date().getTime();
+        var distance = endTime - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("flashSaleTimer").innerHTML = "Thời gian còn lại: " + days + " ngày " + hours + " giờ " + minutes + " phút " + seconds + " giây ";
+
+        // Kiểm tra xem thời gian đếm ngược đã kết thúc chưa
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("flashSaleTimer").innerHTML = "Flash Sale đã kết thúc!";
+            hideFlashSaleProducts();
+        }
+    }
+
+    // Hàm ẩn các sản phẩm là Flash Sale
+    function hideFlashSaleProducts() {
+        var flashSaleProducts = document.querySelectorAll('.flash-sale-card');
+        flashSaleProducts.forEach(function (product) {
+            product.style.display = 'none'; // Ẩn sản phẩm
+        });
+    }
+
+    // Cập nhật thời gian còn lại mỗi 1 giây
+    x = setInterval(function () {
+        updateFlashSaleTimer(endTime);
+    }, 1000);
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const searchForm = document.getElementById('searchForm');
+        const searchInput = document.getElementById('txtSearch');
+
+        searchForm.addEventListener('submit', function (event) {
+            const currentPath = window.location.pathname.toLowerCase();
+            if (currentPath !== '/' && currentPath !== '/home/index') {
+                event.preventDefault();
+                alert('Please go to the home page to search for books.');
+                window.location.href = '/';
+            }
+        });
+    });
+</script>
+ <!-- JavaScript fancy -->
+ <script>
+    $('[data-fancybox]').fancybox({
+        // Options will go here
+        buttons: [
+            'close'
+        ],
+        wheel: false,
+        transitionEffect: "slide",
+        // thumbs          : false,
+        // hash            : false,
+        loop: true,
+        // keyboard        : true,
+        toolbar: false,
+        // animationEffect : false,
+        // arrows          : true,
+        clickContent: false
+    });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        Fancybox.bind("[data-fancybox='gallery']", {
+            // Options for FancyBox
+        });
+    });
+</script>
+<script>
+    window.addEventListener('scroll', function () {
+        var scrollButton = document.querySelector('.btn-scroll-top');
+        if (window.pageYOffset > 100) {
+            scrollButton.style.display = 'block';
+        } else {
+            scrollButton.style.display = 'none';
+        }
+    });
+
+    function scrollToTop() {
+        var scrollDuration = 200;
+        var scrollStep = -window.scrollY / (scrollDuration / 20);
+        var scrollInterval = setInterval(function () {
+            if (window.scrollY !== 0) {
+                window.scrollBy(0, scrollStep);
+            } else {
+                clearInterval(scrollInterval);
+            }
+        }, 20);
+    }
+    loadDarkmode();
+</script>
