@@ -1,552 +1,272 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-/* CSS COMMENT CUSTOMER*/
-.testimonials-container {
+/* Navbar Styles */
+.navbar {
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    display: inline-block;
+}
+
+.logo-image {
+    height: 50px;
+    width: auto;
+}
+
+.navbar-menu {
     display: flex;
-    max-width: 1200px;
-    margin: 160px auto;
-    height: 400px;
+    list-style: none;
+    gap: 2rem;
+    justify-content: flex-end;
+    align-items: center;
 }
 
-.title-section {
-    flex: 1;
-    padding: 20px;
-    background-color: #fff;
+.navbar-menu li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu li a:hover {
+    color: #007bff;
+}
+
+/* Carousel Styles */
+.carousel {
+    margin-top: 80px;
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+/* Welcome Section */
+#title-Hot {
+    text-align: center;
+    padding: 2rem 0;
+    background: linear-gradient(135deg, #f6f9fc 0%, #ffffff 100%);
+}
+
+.test {
+    font-size: 2rem;
+    color: #333;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.product-card {
+    background: #ffffff;
     border-radius: 10px;
-}
-
-.testimonials-button {
-    background-color: #e0e0e0;
-    border: none;
-    padding: 5px 10px;
-    font-size: 14px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-h1 {
-    font-size: 32px;
-    margin: 10px 0;
-}
-
-p {
-    color: #555;
-    line-height: 1.6;
-}
-
-.testimonials-section {
-    flex: 1;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
     position: relative;
 }
 
-.testimonials-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.product-image {
     width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-title {
+    font-size: 1.2rem;
+    padding: 1rem;
+    margin: 0;
+    color: #333;
+}
+
+.product-size, .product-price, .product-discount {
+    padding: 0.5rem 1rem;
+    margin: 0;
+    color: #666;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.btn {
+    display: block;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem;
+    text-align: center;
+    margin: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+/* Flash Sale Section */
+.flash-sale-title {
+    background: linear-gradient(135deg, #ff4e50 0%, #f9d423 100%);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.flash-sale-tag {
+    background: #ff4e50;
+    color: white;
+    padding: 0.5rem 1rem;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    z-index: 1;
+}
+
+/* Filter Section */
+.filter-container {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 5px;
+    margin: 1rem 0;
+}
+
+.filter-btn {
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+/* Testimonials Section */
+.testimonials-container {
+    background: #f8f9fa;
+    padding: 4rem 2rem;
+}
+
+.testimonials-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    margin-bottom: 1rem;
 }
 
 .testimonial {
-    background-color: #fff;
-    padding: 20px;
+    background: white;
+    padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-}
-
-.testimonial-content {
-    display: flex;
-    flex-direction: column;
+    margin: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .customer-info {
     display: flex;
     align-items: center;
-    margin-top: 20px;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
-    .customer-info img {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        margin-right: 10px;
-    }
-
-    .customer-info strong {
-        display: block;
-    }
-
-    .customer-info span {
-        color: #888;
-        font-size: 14px;
-    }
-
-/* Thêm hiệu ứng casual cho sản phẩm flash sale */
-.product-card.flash-sale {
-    transition: transform 0.5s ease-in-out;
-    transform: scale(1); /* Đảm bảo transform mặc định */
-}
-
-    .product-card.flash-sale:hover {
-        transform: scale(1.05);
-    }
-.product-card {
-    /* CSS hiện tại của sản phẩm */
-    transition: transform 0.3s ease-in-out; /* Thêm hiệu ứng chuyển động */
-}
-
-    .product-card.hovered {
-        transform: scale(1.05);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-
-/* CSS CHO FLASH SALE */
-
-.flash-sale-title {
-    font-size: 36px; /* Kích thước tiêu đề lớn hơn */
-    color: #ff0000;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 40px; /* Khoảng cách dưới tiêu đề */
-    text-transform: uppercase; /* Chuyển đổi về chữ in hoa */
-}
-
-
-.flash-sale-card {
-    border-color: #ff0000; /* Màu đỏ để nổi bật flash sale */
-    position: relative;
-}
-
-    .flash-sale-card::before {
-        content: "Flash Sale";
-        color: white;
-        background-color: #ff0000;
-        font-weight: bold;
-        padding: 5px 10px;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        border-radius: 5px;
-        z-index: 10;
-    }
-
-/* CSS cho bộ đếm giờ */
-#flashSaleTimer {
-    font-size: 28px;
-    color: #ff0000;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 40px;
-}
-/* css loc san pham theo gia*/
-.filter-btn {
-    transition: background-color 0.3s, color 0.3s;
-    text-align: center;
-}
-
-    .filter-btn:hover {
-        opacity: 0.8;
-    }
-
-.btn-low-price {
-    background-color: green;
-    color: white;
-}
-
-.btn-high-price {
-    background-color: red;
-    color: white;
-}
-
-.filter-icon {
-    margin-right: 5px;
-}
-
-.filter-container {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-.waving-cat .octo-arm {
-    animation: waving 2s linear infinite;
-}
-
-/* Định nghĩa animation waving */
-@keyframes waving {
-    0%, 100% {
-        transform: rotate(0);
-    }
-
-    20%, 60% {
-        transform: rotate(-25deg);
-    }
-
-    40%, 80% {
-        transform: rotate(10deg);
-    }
-}
-
-.carousel-item img {
-    height: 500px;
-    object-fit: contain;
-}
-
-
-
-.product-card {
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    transition: transform 0.3s ease-in-out; /* Thêm hiệu ứng chuyển động */
-}
-    .product-card.hovered {
-        transform: translateY(-10px); /* Di chuyển sản phẩm lên khi hover */
-    }
-
-.product-image {
-    flex: 2; /* Chiếm 2/3 chiều cao thẻ */
-    width: 100%;
+.customer-info img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
     object-fit: cover;
-}
-
-.product-details p {
-    margin: 5px 0;
-}
-.btn-details {
-    margin-top: 10px;
-}
-
-.product-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10px;
-}
-
-.product-card-title {
-    height: 3em;
-}
-
-.product-card img {
-    height: 200px;
-}
-.test {
-    background: none;
-    font-size: 24px;
-    font-weight: bold;
-    -webkit-animation: my 700ms infinite;
-    -moz-animation: my 700ms infinite;
-    -o-animation: my 700ms infinite;
-    animation: my 700ms infinite;
-}
-
-/* Giảm kích thước toàn bộ hình ảnh trong Carousel */
-.carousel-item img {
-    max-width: 80%; /* Điều chỉnh phần trăm theo ý muốn */
-    max-height: 300px; /* Thay đổi chiều cao tối đa nếu cần */
-    margin: 0 auto; /* Căn giữa hình ảnh */
-    display: block; /* Đảm bảo hình ảnh là một block để căn giữa */
-}
-
-/* Giảm kích thước hình ảnh sản phẩm Flash Sale */
-.flash-sale-card img,
-.product-card img {
-    max-width: 80%; /* Điều chỉnh phần trăm theo ý muốn */
-    max-height: 200px; /* Thay đổi chiều cao tối đa nếu cần */
-    margin: 0 auto; /* Căn giữa hình ảnh */
-    display: block; /* Đảm bảo hình ảnh là một block để căn giữa */
-}
-
-/* Nếu bạn có lớp cụ thể cho hình ảnh sản phẩm, bạn có thể thêm vào như sau */
-.product-image {
-    max-width: 80%; /* Điều chỉnh phần trăm theo ý muốn */
-    max-height: 200px; /* Thay đổi chiều cao tối đa nếu cần */
-    margin: 0 auto; /* Căn giữa hình ảnh */
-    display: block; /* Đảm bảo hình ảnh là một block để căn giữa */
-}
-/*animation */
-@-webkit-keyframes my {
-    0% {
-        color: #F8CD0A;
-    }
-
-    50% {
-        color: #fff;
-    }
-
-    100% {
-        color: #F8CD0A;
-    }
-}
-
-@-moz-keyframes my {
-    0% {
-        color: #F8CD0A;
-    }
-
-    50% {
-        color: #fff;
-    }
-
-    100% {
-        color: #F8CD0A;
-    }
-}
-
-@-o-keyframes my {
-    0% {
-        color: #F8CD0A;
-    }
-
-    50% {
-        color: #fff;
-    }
-
-    100% {
-        color: #F8CD0A;
-    }
-}
-
-@keyframes my {
-    0% {
-        color: #F8CD0A;
-    }
-
-    50% {
-        color: #fff;
-    }
-
-    100% {
-        color: #F8CD0A;
-    }
-}
-/* CSS cho carousel */
-/*.carousel {
-    margin-bottom: 50px;
-}*/
-
-.carousel-item img {
-    height: 500px; /* Điều chỉnh giá trị này để thay đổi chiều cao của carousel */
-    width: 100%; /* Đảm bảo chiều rộng là 100% của container */
-    object-fit: contain; /* Đảm bảo hình ảnh vừa vặn trong container mà không bị cắt xén */
-    display: block; /* Ngăn cách các khoảng trống dưới hình ảnh */
-    margin: 0 auto; /* Căn giữa hình ảnh nếu cần */
-}
-
-
-
-.product-card {
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    transition: transform 0.3s ease-in-out; /* Thêm hiệu ứng chuyển động */
-}
-    .product-card.hovered {
-        transform: translateY(-10px); /* Di chuyển sản phẩm lên khi hover */
-    }
-
-.product-image {
-    flex: 2; /* Chiếm 2/3 chiều cao thẻ */
-    width: 100%;
-    object-fit: cover;
-}
-
-.product-details p {
-    margin: 5px 0;
-}
-.btn-details {
-    margin-top: 10px;
-}
-
-.product-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10px;
-}
-
-/* Giữ chiều cao cố định cho tiêu đề để giữ uniform cho các thẻ sản phẩm */
-.product-card-title {
-    height: 3em; /* Chiều cao cố định cho tiêu đề */
-    overflow: hidden; /* Ẩn phần nội dung vượt quá chiều cao */
-    display: flex; /* Sử dụng flex để căn giữa nội dung */
-    align-items: center; /* Căn giữa nội dung theo chiều dọc */
-}
-
-/* Đặt chiều cao cố định cho hình ảnh sản phẩm */
-.product-card img {
-    height: 200px; /* Chiều cao cố định cho hình ảnh sản phẩm */
-    object-fit: cover; /* Đảm bảo hình ảnh được cắt và giữ tỷ lệ mà không bị biến dạng */
-    width: 100%; /* Đặt chiều rộng 100% để phù hợp với khung */
-    max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng khung */
-}
-#title-Hot {
-    display: flex; /* Sử dụng flexbox */
-    justify-content: center; /* Căn giữa theo chiều ngang */
-    align-items: center; /* Căn giữa theo chiều dọc nếu cần */
-    height: 100px; /* Chiều cao khung chứa (có thể thay đổi theo nhu cầu) */
-}
-.w3hny-passion-item {
-    display: flex; /* Để căn giữa nếu cần */
-    align-items: center; /* Căn giữa theo chiều dọc */
-}
-
-.passion-grid-item-pic {
-    padding: 5px; /* Khoảng cách giữa các ảnh (tuỳ chọn) */
-}
-
-
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.title {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.product-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.product-card {
-    width: calc(20% - 10px); /* Chiều rộng cho 5 hình ảnh trên một hàng */
-    margin: 5px; /* Khoảng cách giữa các hình ảnh */
-    background-color: white; /* Màu nền cho card */
-    border-radius: 5px; /* Bo tròn góc */
-    padding: 10px; /* Padding bên trong card */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng cho card */
-}
-
-.product-image {
-    width: 100%; /* Hình ảnh rộng 100% */
-    border-radius: 5px; /* Bo tròn góc cho hình ảnh */
-}
-
-.product-title {
-    font-size: 18px; /* Kích thước chữ cho tiêu đề sản phẩm */
-    margin: 10px 0; /* Khoảng cách trên và dưới cho tiêu đề */
-}
-
-.product-size, .product-price, .product-discount {
-    font-size: 14px; /* Kích thước chữ cho thông tin sản phẩm */
-    margin: 5px 0; /* Khoảng cách trên và dưới cho các thông tin sản phẩm */
-}
-
-.old-price {
-    text-decoration: line-through; /* Gạch chéo giá cũ */
-    color: red; /* Màu đỏ cho giá cũ */
-}
-
-
-
-/* Navbar */
-.content {
-    height: 100vh; /* Chiều cao nội dung */
-    background: url('https://example.com/background-image.jpg') no-repeat center center/cover; /* Thay đổi thành URL hình nền của bạn */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: black; /* Màu chữ cho nội dung */
-    text-align: center;
-}
-
-/* Navbar */
-.content {
-    height: 100vh; /* Chiều cao nội dung */
-    background: url('https://example.com/background-image.jpg') no-repeat center center/cover; /* Thay đổi thành URL hình nền của bạn */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: black; /* Màu chữ cho nội dung */
-    text-align: center;
-}
-
-/* Navbar */
-.navbar {
-    position: fixed; /* Để navbar ở trên cùng */
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(255, 255, 255, 0.7); /* Nền trong suốt */
-    display: flex;
-    justify-content: flex-start; /* Căn nội dung sang bên trái */
-    align-items: center;
-    padding: 10px 20px;
-    z-index: 1000; /* Đảm bảo navbar luôn ở trên cùng */
-}
-
-.navbar-brand .logo {
-    color: black; /* Màu chữ cho logo */
-    text-decoration: none;
-    font-size: 24px;
-}
-
-.navbar-menu {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar-menu li {
-    margin-left: 20px;
-}
-
-.navbar-menu a {
-    color: black; /* Màu chữ cho menu */
-    text-decoration: none;
-    padding: 8px 12px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.navbar-menu a:hover {
-    background-color: rgba(0, 0, 0, 0.1); /* Màu nền khi hover */
-    color: black; /* Đảm bảo màu chữ khi hover vẫn là đen */
-}
-.logo-image {
-    height: 50px; /* Điều chỉnh chiều cao của logo */
 }
 
 /* Footer */
 .footer {
-    background-color: #333; /* Màu nền của footer */
+    background: #333;
     color: white;
-    padding: 20px 0;
-    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
 }
 
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .footer-menu {
     list-style: none;
-    padding: 0;
-    margin: 10px 0 0;
     display: flex;
-    justify-content: center;
-}
-
-.footer-menu li {
-    margin: 0 10px;
+    gap: 2rem;
 }
 
 .footer-menu a {
     color: white;
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 .footer-menu a:hover {
-    color: #aaa; /* Màu chữ khi hover */
+    color: #007bff;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none;
+    }
+    
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .footer-menu {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
